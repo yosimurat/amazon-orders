@@ -5,3 +5,5 @@ gem 'nokogiri'
 
 gem 'pry'
 gem 'pry-doc'
+gem 'pry-byebug'
+gem 'byebug', platform: :mri

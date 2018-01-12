@@ -12,6 +12,7 @@
 
 require 'rubygems'
 require 'selenium-webdriver' # gem install selenium-webdriver
+require 'pry'
 # brew install geckodriver
 # brew install ChromeDriver
 
@@ -35,7 +36,8 @@ module Amazon
     def save_order(wd)
       sleep 1
       wd.find_element(:link_text, '利用規約')
-      orders = wd.find_elements(:link_text, '注文の詳細')
+      orders = wd.find_elements(:link_text, '領収書／購入明細書')
+      # orders = wd.find_elements(:link_text, '注文の詳細')
       orders.each do |ord|
         open_new_window(wd, ord.attribute('href')) do
           @order_seq += 1
